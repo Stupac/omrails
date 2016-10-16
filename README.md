@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is being built as a part of a project for the Ruby on Rails 5 course, which is available on www.OneMonth.com
 
-Things you may want to cover:
+Things you may want to know:
 
-* Ruby version
+* This was built using Rails 5.0.0.1, and Ruby 2.3.0p0
 
-* System dependencies
+* Once you've downloaded and installed everything, you can navigate to the main folder containing the site, and run it using the command line command: rails server.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* This is an ongoing project and won't be finished until after November 11, 2016. Anything before that date is likely going to be incomplete.
