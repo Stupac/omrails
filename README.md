@@ -9,3 +9,5 @@ Things you may want to know:
 * Once you've downloaded and installed everything, you can navigate to the main folder containing the site, and run it using the command line command: rails server.
 
 * This is an ongoing project and won't be finished until after November 11, 2016. Anything before that date is likely going to be incomplete.
+
+* This is an extra line of text for no good reason at all.
