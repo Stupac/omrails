@@ -29,9 +29,20 @@
     </nav>
 
     <!-- Flash Messages -->
-    <% flash.each do |name, message| %>
-      <%= content_tag(:dive, message, class: "alert alert-info #{name}") %>
+    <% if notice || alert %>
+        <div class="alert <%= notice ? "alert-info" : "" %><%= alert ? "alert-danger" : "" %> alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <div >
+                <% if notice %>
+                    <%= notice %>
+                <% elsif alert %>
+                    <%= alert %>
+                <% end %>
+            </div>
+        </div>
     <% end %>
+
 
     <!-- Page Content -->
     <%= yield %>

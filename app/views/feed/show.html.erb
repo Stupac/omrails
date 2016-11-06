@@ -1,19 +1,21 @@
 <div class="container">
-
-
   <div class="row">
     <div class="col-md-4">
       <div class="card card-block">
-          <h4 class="card-title"><%= @user.username %></h4>
-          <p class="card-text"><%= @user.name %></p>
-          <% if current_user.following?(@user) %>
-            <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete  %></p>
-          <% else %>
-            <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post  %></p>
-          <% end %>
+        <% if user_signed_in? %>
+          <h4 class="card-title">Account</h4>
+        <% else %>
+          <h4 class="card-title">Create Account or Login</h4>
+            <a class="nav-item pull-md-left"><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-sm btn-block"  %></a>
+            <a class="nav-item pull-md-left"><%= link_to "Sign In", signin_path, class: "btn btn-secondary btn-sm btn-block" %></a>
+        <% end %>
+        <p class="card-text"><%= link_to current_user.username, user_path(current_user.username) %></p>
       </div>
     </div>
     <div class="col-md-8">
+      <% if user_signed_in? %>
+        <%= link_to 'New Tweet', new_tweet_path %>
+      <% end %>
 
       <ul class="list-group">
         <% @tweets.each do |tweet| %>
