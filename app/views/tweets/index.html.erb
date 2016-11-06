@@ -11,7 +11,7 @@
             <a class="nav-item pull-md-left"><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-sm btn-block"  %></a>
             <a class="nav-item pull-md-left"><%= link_to "Sign In", signin_path, class: "btn btn-secondary btn-sm btn-block" %></a>
         <% end %>
-        <p class="card-text"><%= current_user.try(:email) %></p>
+        <p class="card-text"><%= current_user.try(:username) %></p>
       </div>
     </div>
     <div class="col-md-8">
@@ -22,7 +22,7 @@
       <ul class="list-group">
         <% @tweets.each do |tweet| %>
           <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
-            <h5 class="list-group-item-heading"><%= tweet.user.email %></h5>
+            <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
             <p class="list-group-item-text"><%= tweet.content %></p>
             <% if tweet.user == current_user %>
               <%= link_to 'Edit', edit_tweet_path(tweet) %>
