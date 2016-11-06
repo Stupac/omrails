@@ -12,15 +12,20 @@
         <div class="container">
             <h1>Welcome to "Look What I Can Do! It's my site!"</h1>
             <p>Here, our aim is simply to help you discover new skills that you didn't even know you were capable of attaining! Soon, you'll be showing your friends and family the things you've learned here, and shouting out, "Look what I can do!".</p>
-            <%= link_to "Learn more »", "#", class: "btn btn-primary btn-lg" %>
+            <%= link_to "Learn more »", "#", class: "btn btn-secondary btn-lg" %>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Tie Your Shoes</h2>
-                <p>It might seem like an overwhelming one to start you on. Maybe it's haunted you for your whole life. Don't fret! With a little bit of determination and elbow grease, you, too, can learn to tie your shoes. </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <div class="card card-block">
+                    <img class="card-img-top" src="http://www.footlocker.com.au/media/catalog/product/cache/1/image/318x180/c0f42c7521717ad1c741310b296de30c/background/bg_list.jpg" alt="Card image cap">
+                    <div class="card-block">
+                    <h4 class="card-title">Tie Your Shoes</h4>
+                    <p class="card-text">It might seem like an overwhelming one to start you on. Maybe it's haunted you for your whole life. Don't fret! With a little bit of determination and elbow grease, you, too, can learn to tie your shoes. </p>
+                    <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
                 <h2>Learn Sweet Nunchuk Skills</h2>

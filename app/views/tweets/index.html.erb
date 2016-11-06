@@ -1,34 +1,37 @@
 <div class="container">
 
-  <h1>Tweets</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Content</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @tweets.each do |tweet| %>
-        <tr>
-          <td><%= tweet.user.email %></td>
-          <td><%= tweet.content %></td>
-          <td><%= link_to 'Show', tweet %></td>
-          <% if tweet.user == current_user %>
-            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-block">
+        <% if user_signed_in? %>
+          <h4 class="card-title">Account</h4>
+        <% else %>
+          <h4 class="card-title">Create Account or Login</h4>
+            <a class="nav-item pull-md-left"><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-sm btn-block"  %></a>
+            <a class="nav-item pull-md-left"><%= link_to "Sign In", signin_path, class: "btn btn-secondary btn-sm btn-block" %></a>
+        <% end %>
+        <p class="card-text"><%= current_user.try(:email) %></p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <% if user_signed_in? %>
+        <%= link_to 'New Tweet', new_tweet_path %>
       <% end %>
-    </tbody>
-  </table>
 
-  <br>
-  <% if user_signed_in? %>
-  <%= link_to 'New Tweet', new_tweet_path %>
-  <% end %>
-
+      <ul class="list-group">
+        <% @tweets.each do |tweet| %>
+          <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
+            <h5 class="list-group-item-heading"><%= tweet.user.email %></h5>
+            <p class="list-group-item-text"><%= tweet.content %></p>
+            <% if tweet.user == current_user %>
+              <%= link_to 'Edit', edit_tweet_path(tweet) %>
+              <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+

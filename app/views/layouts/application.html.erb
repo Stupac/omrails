@@ -11,7 +11,7 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-dark bg-inverse">
+    <nav class="navbar navbar-dark bg-primary">
       <div class="container">
         <%= link_to "Look What I Can Do!", root_path, class: "navbar-brand" %>
         <ul class="nav navbar-nav">
@@ -21,7 +21,7 @@
           <% if user_signed_in? %>
             <li class="nav-item pull-md-right"><%= link_to "Log Out", signout_path, method: :delete, class: "nav-link" %></li>
           <%else %>
-            <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "btn btn-primary" %></li>
+            <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "btn btn-primary"  %></li>
             <li class="nav-item pull-md-right"><%= link_to "Sign In", signin_path, class: "nav-link" %></li>
           <% end %>
         </ul>
