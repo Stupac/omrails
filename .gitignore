@@ -23,3 +23,6 @@
 
 # Ignore public system folder
 /public/system
+
+# Ignore .ENV file
+.env
