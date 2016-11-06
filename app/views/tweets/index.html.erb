@@ -6,12 +6,12 @@
       <div class="card card-block">
         <% if user_signed_in? %>
           <h4 class="card-title">Account</h4>
+          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username) %></p>
         <% else %>
           <h4 class="card-title">Create Account or Login</h4>
             <a class="nav-item pull-md-left"><%= link_to "Sign Up", signup_path, class: "btn btn-primary btn-sm btn-block"  %></a>
             <a class="nav-item pull-md-left"><%= link_to "Sign In", signin_path, class: "btn btn-secondary btn-sm btn-block" %></a>
         <% end %>
-        <p class="card-text"><%= link_to current_user.username, user_path(current_user.username) %></p>
       </div>
     </div>
     <div class="col-md-8">
@@ -23,7 +23,19 @@
         <% @tweets.each do |tweet| %>
           <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
             <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
+            <% if tweet.image.present? %>
+              <center><%= image_tag tweet.image %></center>
+            <% end %>
             <p class="list-group-item-text"><%= tweet.content %></p>
+            <h5 class="list-group-item-heading">Votes</h5>
+            <%= tweet.votes_for.up.size %>
+            <% if user_signed_in? %>
+              <% if current_user.voted_up_on? tweet %>
+                <%= link_to 'Unvote', unvote_tweet_path(tweet), method: :delete %>
+              <% else %>
+                <%= link_to 'Vote', vote_tweet_path(tweet), method: :post %>
+              <% end %>
+            <% end %>
             <% if tweet.user == current_user %>
               <%= link_to 'Edit', edit_tweet_path(tweet) %>
               <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></p>
