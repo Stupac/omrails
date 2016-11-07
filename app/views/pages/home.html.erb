@@ -2,16 +2,15 @@
     <div class="jumbotron jumbotron-home">
     <div class="container">
         <h1>Welcome back!</h1>
-        <p>I knew you wouldn't be able to stay away for long. Once you've learned one sweet skill and tasted the glory that it brings,
-        you're left with the insatiable hunger for more. MORE! I'm glad you're back. </p>
+        <p>Glad to have you back. Feel free to jump right into the social feed, or nagivate to other areas of the site. </p>
             <%= link_to "View Feed »", feed_path, class: "btn btn-primary btn-lg" %>
     </div>
 </div>
 <% else %>
     <div class="jumbotron jumbotron-home">
         <div class="container">
-            <h1>Welcome to "Look What I Can Do! It's my site!"</h1>
-            <p>Here, our aim is simply to help you discover new skills that you didn't even know you were capable of attaining! Soon, you'll be showing your friends and family the things you've learned here, and shouting out, "Look what I can do!".</p>
+            <h1>Welcome to "Look What I Can Do!"</h1>
+            <p>This site is entirely dedicated to furthering my knowledge and skills in all areas. My current project is geared toward creating a twitter-style social media clone. You can check it out by clicking the button below. That will take you to the basic stream, but if you'd like to see more, I encourage you to create an account and sign-in.</p>
             <%= link_to "View Stream »", tweets_path, class: "btn btn-secondary btn-lg" %>
         </div>
     </div>
@@ -19,24 +18,33 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-block">
-                    <img class="card-img-top" src="http://www.footlocker.com.au/media/catalog/product/cache/1/image/318x180/c0f42c7521717ad1c741310b296de30c/background/bg_list.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid" src="http://51rules.com/wp-content/uploads/2016/06/about-me-leon-severan-we-buy-houses.jpg" alt="Card image cap">
                     <div class="card-block">
-                    <h4 class="card-title">Tie Your Shoes</h4>
-                    <p class="card-text">It might seem like an overwhelming one to start you on. Maybe it's haunted you for your whole life. Don't fret! With a little bit of determination and elbow grease, you, too, can learn to tie your shoes. </p>
-                    <p><%= link_to "View details", about_path , class: "btn btn-secondary" %></p>
+                    <h3 class="card-title">Who Am I?</h3>
+                    <p class="card-text">I'm just a guy who likes to learn. This whole site was done as a project, in fact. If you'd like to find out more, feel free. </p>
+                    <p><%= link_to "Learn More", about_path , class: "btn btn-secondary" %></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <h2>Learn Sweet Nunchuk Skills</h2>
-                <p>A wise man once said, "Chicks dig guys with skills". The pinnacle of those skills are the nunchuks.
-                If you want to impress your friends (or at least your grandparents) you need sweet nunchuk skills. </p>
-                <p><%= link_to "View details", contact_path , class: "btn btn-secondary" %></p>
+                <div class="card card-block">
+                    <img class="card-img-top img-fluid" src="http://www.onclick.co.uk/wp-content/uploads/2014/08/getintouch_350px.png" alt="Card image cap">
+                    <div class="card-block">
+                    <h3 class="card-title">Get in Touch</h3>
+                    <p>If you'd like to reach out to me about some of the things you've seen on this site, click through to find out how. </p>
+                    <p><%= link_to "Reach Out", contact_path , class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <h2>Make a Breakthrough in Human Cloning</h2>
-                <p>They said it couldn't be done. They obviously never met you. Maybe you think it's a stretch for you to go straight from tying your shoes to making a breakthrough in human cloning, but don't doubt what you're capable of (that's a hanging preposition). </p>
-                <p><%= link_to "View details", tweets_path , class: "btn btn-secondary" %></p>
+                <div class="card card-block">
+                    <img class="card-img-top img-fluid" src="http://www.masquenegocio.com/wp-content/uploads/2016/05/twitter-logo-874x492.jpg" alt="Card image cap">
+                    <div class="card-block">
+                    <h3 class="card-title">Building Clones</h3>
+                <p>Check out the primary project I've been building into this website. It's a rough clone of the basics of a twitter feed. It's a work in progress, but feel free to try it out, and even create an account. </p>
+                <p><%= link_to "View Social App", tweets_path , class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
