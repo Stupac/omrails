@@ -1,16 +1,50 @@
 <% if user_signed_in? %>
     <div class="jumbotron jumbotron-home">
-    <div class="container">
-        <h1>Welcome back!</h1>
-        <p>Glad to have you back. Feel free to jump right into the social feed, or nagivate to other areas of the site. </p>
+        <div class="container">
+        <h1 class="font">Welcome back!</h1>
+        <p class="font">Glad to have you back. Feel free to jump right into the social feed, or nagivate to other areas of the site. </p>
             <%= link_to "View Feed »", feed_path, class: "btn btn-primary btn-lg" %>
+        </div>
     </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-block">
+                    <img class="card-img-top img-fluid" src="http://51rules.com/wp-content/uploads/2016/06/about-me-leon-severan-we-buy-houses.jpg" alt="Card image cap">
+                    <div class="card-block">
+                    <h3 class="card-title">Who Am I?</h3>
+                    <p class="card-text">I'm just a guy who likes to learn. This whole site was done as a project, in fact. If you'd like to find out more, feel free. </p>
+                    <p><%= link_to "Learn More", about_path , class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-block">
+                    <img class="card-img-top img-fluid" src="http://www.onclick.co.uk/wp-content/uploads/2014/08/getintouch_350px.png" alt="Card image cap">
+                    <div class="card-block">
+                    <h3 class="card-title">Get in Touch</h3>
+                    <p>If you'd like to reach out to me about some of the things you've seen on this site, click through to find out how. </p>
+                    <p><%= link_to "Reach Out", contact_path , class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-block">
+                    <img class="card-img-top img-fluid" src="http://www.masquenegocio.com/wp-content/uploads/2016/05/twitter-logo-874x492.jpg" alt="Card image cap">
+                    <div class="card-block">
+                    <h3 class="card-title">Building Clones</h3>
+                <p>Check out the primary project I've been building into this website. It's a rough clone of the basics of a twitter feed. It's a work in progress, but feel free to try it out, and even create an account. </p>
+                <p><%= link_to "View Social App", tweets_path , class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <% else %>
     <div class="jumbotron jumbotron-home">
         <div class="container">
-            <h1>Welcome to "Look What I Can Do!"</h1>
-            <p>This site is entirely dedicated to furthering my knowledge and skills in all areas. My current project is geared toward creating a twitter-style social media clone. You can check it out by clicking the button below. That will take you to the basic stream, but if you'd like to see more, I encourage you to create an account and sign-in.</p>
+            <h1 class="font">Welcome to "Look What I Can Do!"</h1>
+            <p class="font">This site is entirely dedicated to furthering my knowledge and skills in all areas. My current project is geared toward creating a twitter-style social media clone. You can check it out by clicking the button below. That will take you to the basic stream, but if you'd like to see more, I encourage you to create an account and sign-in.</p>
             <%= link_to "View Stream »", tweets_path, class: "btn btn-secondary btn-lg" %>
         </div>
     </div>
