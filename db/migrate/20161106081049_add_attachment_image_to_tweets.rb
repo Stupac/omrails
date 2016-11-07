@@ -1,7 +1,4 @@
 class AddAttachmentImageToTweets < ActiveRecord::Migration
-  def change
-    add_attachment :tweets, :image
-  end
 
   def self.up
     change_table :tweets do |t|
