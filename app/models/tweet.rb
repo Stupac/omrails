@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   validates :content, presence: true, length: { maximum: 140 }
 
   acts_as_votable
-  has_attached_file :image, styles: {
+  has_attached_file :image, :storage => :s3, styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>',
