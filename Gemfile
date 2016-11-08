@@ -37,6 +37,7 @@ gem "acts_as_follower", github: "tcocca/acts_as_follower"
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem "figaro"
 
 
 group :development, :test do
