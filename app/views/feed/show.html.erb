@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card card-block">
-        <% if @tweet.image.present? %>
-          <center><%= image_tag @tweet.image, class: "img-fluid" %></center>
-        <% end %>
+            <% if tweet.image.present? %>
+              <center><%= image_tag tweet.image, class: "img-fluid" %></center>
+            <% end %>
         <% if user_signed_in? %>
           <h4 class="card-title">Account</h4>
         <% else %>
@@ -25,6 +25,9 @@
           <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
             <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
             <p class="list-group-item-text"><%= tweet.content %></p>
+            <% if tweet.image.present? %>
+              <center><%= image_tag tweet.image, class: "img-fluid" %></center>
+            <% end %>
             <% if tweet.user == current_user %>
               <%= link_to 'Edit', edit_tweet_path(tweet) %>
               <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></p>
